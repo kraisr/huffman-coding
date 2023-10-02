@@ -1,8 +1,11 @@
-# huffman-coding
+<h1 align="center">huffman-coding</h1>
+
 ## Description:
 Lossless data compression algorithm. Uses binary tree structure to organize the characters by their frequency.
 
-![alt text](https://github.com/kraisr/huffman-coding/blob/main/images/huffman.png?raw=true)
+<p align="center">
+  <a href="https://en.wikipedia.org/wiki/Huffman_coding"><img src="https://github.com/kraisr/huffman-coding/blob/main/images/huffman.png?raw=true"/></a>
+</p>
 
 ## Usage:
 1) Download the files in the repo
