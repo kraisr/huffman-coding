@@ -2,7 +2,7 @@
 ## Description:
 Lossless data compression algorithm. Uses binary tree structure to organize the characters by their frequency.
 
-![alt text](https://github.com/kraisr/huffman-coding/blob/main/test_files/huffman.png?raw=true)
+![alt text](https://github.com/kraisr/huffman-coding/blob/main/images/huffman.png?raw=true)
 
 ## Usage:
 1) Download the files in the repo
