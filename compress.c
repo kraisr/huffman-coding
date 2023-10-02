@@ -9,7 +9,6 @@
 // and the frequency of that character (size = sizeof(unsigned int))
 // Format: [nChars] [char1 ascii code(char)] [char1 frequency(int)] [char2 ascii code] [char2 frequency] ...
 void writeCharFrequenciesinFile(FILE * out_file, NodeArray * node_array){
-	//TODO: write your implementation here
 	int i = 0;
 	// Writing the first bit [nChars]
 	bit_buffer = node_array->nChars;
@@ -56,7 +55,6 @@ void writeCharFrequenciesinFile(FILE * out_file, NodeArray * node_array){
 // Adds 0 bits to the end of the final byte if the encoded document
 // ends with a partial byte (cannot write single bits to the file!)
 void padBuffer(FILE * out_file){
-	//TODO: write your implementation here
 	while (nBits > 0) {
 		// Padding the buffer with 0's for partial bits
 		writeBitBuffer(0, out_file);
@@ -67,7 +65,6 @@ void padBuffer(FILE * out_file){
 // write it to the file (cannot write individual bits to a file!)
 // Reset nBits and the bitBuffer if the buffer is written to the file
 void writeBitBuffer(int bit, FILE * out_file){
-	//TODO: write your implementation here
 	unsigned char mask;
 	if (bit == 1) {
 		mask = 1;
@@ -87,7 +84,6 @@ void writeBitBuffer(int bit, FILE * out_file){
 // Given a code string, it takes each "bit" representing character and
 // writes it to the bit buffer for the output file
 void writeCodeToFile (char * code, FILE * out_file){
-	//TODO: write your implementation here
 	char * temp = code;
 	while (*temp != '\0') {
 		int c = (int) *temp - '0';

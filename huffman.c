@@ -31,7 +31,6 @@ void printNA(char* src){
 
 // Function for -p option
 void printHT(char* src){
-	//TODO: write your implementation here
 	//Make frequency array
 	unsigned ascii_freq[256] = {0};
 	//Make the initial sorted node array
@@ -47,7 +46,6 @@ void printHT(char* src){
 
 //Function for -e option
 void encode(char* src, char* dest){
-	//TODO: write your implementation here
 	//Make frequency array
 	unsigned ascii_freq[256] = {0};
 	//Make the initial sorted node array
@@ -62,7 +60,6 @@ void encode(char* src, char* dest){
 
 //Function for -ep option
 void encodeAndPrintHT(char* src, char* dest){
-	//TODO: write your implementation here
 	//Make frequency array
 	unsigned ascii_freq[256] = {0};
 	//Make the initial sorted node array
@@ -78,8 +75,6 @@ void encodeAndPrintHT(char* src, char* dest){
 
 //Function for -pc option
 void printHTFromEncoded(char* src){
-	//TODO: write your implementation here
-	
 	FILE *fd = fopen(src, "r");
 	
 	NodeArray *node_array = buildNodeArrayFromFile(fd);
@@ -98,7 +93,6 @@ void decode(char* src, char* dest){
 
 //Function for -dpc option TODO
 void decodeAndPrintHT(char* src, char* dest){
-	//TODO: write your implementation here
 	uncompress(src, dest);
 	printHTFromEncoded(src);
 }
@@ -120,7 +114,6 @@ int main (int argc, char** argv){
 	char* src = argv[2];
 
 	//Check if the mode matches one of the 3 argument modes
-	//TODO: Complete the main function below
 	if(argc==3){
 		if(!strcmp(mode, "-p")){
 			printHT(src);

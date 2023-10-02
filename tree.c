@@ -5,14 +5,12 @@
 
 //Free memory allocated to the node array
 void clearNodeArray(NodeArray * node_array){
-	//TODO: write your implementation here
 	free(node_array);
 }
 
 // Checks to see if nChars == capacity in the node_array
 // If so, the size of the node_array is doubled
 void resizeArrayIfNeeded(NodeArray * node_array){
-	//TODO: write your implementation here
 	// Checking if the array has reached its max capacity
 	if (node_array->nChars == node_array->capacity) {
 		// Reallocating the memory for the node_array with double the size
@@ -26,7 +24,6 @@ void resizeArrayIfNeeded(NodeArray * node_array){
 // Then, inserts a new node at the end of the node array for the new character
 // All values for the node are initialized, and the nChars count is updated
 void insertInNodeArray(int c, int freq, NodeArray * node_array, Node *left, Node *right){
-	//TODO: write your implementation here
 	// Calling resize in case the capacity is too small
 	resizeArrayIfNeeded(node_array);
 	// Shifting i to the last position in the NodeArray
@@ -50,7 +47,6 @@ void insertInNodeArray(int c, int freq, NodeArray * node_array, Node *left, Node
 // Returns the difference a->freq - b->freq if it is non-zero
 // Else, returns the difference a->val - b->val
 int compNodes (const Node *nodeA, const Node *nodeB){
-	//TODO: write your implementation here
 	if (nodeA->frequency - nodeB->frequency != 0) {
 		return nodeA->frequency - nodeB->frequency;
 	} else {
@@ -63,7 +59,6 @@ int compNodes (const Node *nodeA, const Node *nodeB){
 // (uses minimum ascii value as a tie breaker)
 // Hint: use the function compNodes to simplify your function
 void sortNodeArray(NodeArray * node_array){
-	//TODO: write your implementation here
 	for (int i = 0; i < node_array->nChars; i++) {
 		for (int j = 0; j < node_array->nChars; j++) {
 			if (compNodes(node_array->nodes[i], node_array->nodes[j]) < 0) {
@@ -77,7 +72,6 @@ void sortNodeArray(NodeArray * node_array){
 
 // Allocates, initializes, and returns a node array
 NodeArray * initializeNodeArray(int * ascii_freq, int nChars){
-	//TODO: write your implementation here
 	NodeArray *nArray = (NodeArray *) malloc(nChars * sizeof(NodeArray));
 	nArray->nChars = 0;
 	nArray->capacity = nChars;
@@ -96,7 +90,6 @@ NodeArray * initializeNodeArray(int * ascii_freq, int nChars){
 // Opens the specified file and counts the frequency of each ascii character in it
 // Returns a node array corresponding to the frequencies
 NodeArray * createHistogramFromFile(char * input_file, int * ascii_freq){	
-	//TODO: write your implementation here
 	FILE *fd;
 	if ((fd = fopen(input_file, "r")) == NULL) {
 		return 0;
@@ -153,7 +146,6 @@ Node * getMin(NodeArray * node_array){
 //Selects the minimum of two nodes as the next child based on frequency
 //Character value is used as a tie breaker if needed
 Node* selectChild(Node* n1, Node* n2){
-	//TODO: write your implementation here
 	if (compNodes(n1, n2) > 0) {
 		return n2;
 	} else {
@@ -176,7 +168,6 @@ void initParent(Node* parent, Node* left, Node* right){
 // Builds a Huffman Tree and associates characters to their code using a node_array
 // Assumes that the node array has already been created and sorted
 NodeArray * buildHuffmanTree(NodeArray * node_array){
-	//TODO: Allocate another node array to serve as the Huffman Tree
 	NodeArray * huffman_tree = (NodeArray *) malloc(512 * sizeof(NodeArray));
 	huffman_tree->capacity = 512;
 	huffman_tree->nodes = (Node**) malloc(huffman_tree->capacity * sizeof(Node));
@@ -185,7 +176,7 @@ NodeArray * buildHuffmanTree(NodeArray * node_array){
 	//Declare the next available index to use for internal nodes
 	int next_internal=0;
 
-	//TODO: iterate through node_array and any created internal nodes to build the huffman tree:
+	// iterate through node_array and any created internal nodes to build the huffman tree:
 	// (1) While any leaves or more than 1 non-leaves have not been turned into children, 
 	// 		select the minimum two nodes from either node array
 	// (2) Use these nodes as the children left and right passed to initParent
@@ -289,7 +280,6 @@ int isLeafNode(Node * n){
 // 		and the right subtree is assigned a 0 bit
 void printTree(Node * root, int code[], int i){
 	if (root == NULL) return;
-	//TODO: write your implementation here
 	// pre-order traversal
 	if (isLeafNode(root)) {
 		// printing a node as "[ascii value] = [ascii character]\t[bitstring]]\n"
@@ -317,7 +307,6 @@ void textToCode(Node * root, int code[], int i){
 	code[i] = 0;
 	textToCode(root->right, code, i+1);
 
-	//TODO: write your implementation here to assign a code to the current node
 	//Note: only leaves need to have a code assigned!
 
 	if (isLeafNode(root)) {

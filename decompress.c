@@ -5,7 +5,6 @@
 
 // Read and return a single int from the file
 int readIntFromFile(FILE * in_file){
-	//TODO: write your implementation here
 	return (int) (fgetc(in_file) - '0');
 }
 
@@ -33,7 +32,6 @@ void printBits(unsigned char temp) {
 // Read and return the number of unique characters in the file
 // Obtain all character frequencies of the encoded file and store them in ascii_freq
 int loadFrequenciesFromFile(FILE * in_file, int* ascii_freq){
-	//TODO: write your implementation here
 	char c = fgetc(in_file);
 	int nChars = (int) c;
 	int temp = nChars;
@@ -61,7 +59,6 @@ int loadFrequenciesFromFile(FILE * in_file, int* ascii_freq){
 // (1) Load all frequency information from the header of the specified file
 // (2) Builds a node array from the file frequencies
 NodeArray * buildNodeArrayFromFile(FILE* in_file){
-	//TODO: write your implementation here
 	unsigned ascii_freq[256] = {0};
 	int nChars = loadFrequenciesFromFile(in_file, ascii_freq);
 	NodeArray *node_array = initializeNodeArray(ascii_freq, nChars);
@@ -71,7 +68,6 @@ NodeArray * buildNodeArrayFromFile(FILE* in_file){
 // Write the decoded file into the output file
 // Assumes that the next byte to read is the first byte to decode (just past the header)
 void writeUncompressedFile(FILE* in_file, FILE* out_file, NodeArray* huffman_tree){
-	//TODO: write your implementation here
 	FILE *temp = in_file;
 
 	Node *root = getRootHuffmanTree(huffman_tree);
@@ -133,7 +129,6 @@ void writeUncompressedFile(FILE* in_file, FILE* out_file, NodeArray* huffman_tre
 // character to the output file
 // (4) Free the node arrays and close the files
 void uncompress(char * input_file, char* output_file){
-	//TODO: write your implementation here
 	// Open the files
 	FILE *in_file = fopen(input_file, "r"),
 		*out_file = fopen(output_file, "wb");
